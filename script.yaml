@@ -1,0 +1,59 @@
+esphome:
+  name: ir-and-sence-esp32c6
+  friendly_name: ir_and_sence_esp32c6
+
+esp32:
+  board: esp32-c6-devkitc-1
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: !secret ha_key
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  ap:
+    ssid: !secret ap_wifi_ssid
+    password: !secret ap_wifi_password
+
+captive_portal:
+
+i2c:
+  sda: GPIO22
+  scl: GPIO23
+  scan: True
+  id: i2c_bus
+  frequency: 1000Hz
+
+sensor:
+  - platform: bmp280_i2c
+    temperature:
+      id: "Temperature"
+      name: "Temperature"
+      oversampling: 16x
+    pressure:
+      name: "Pressure"
+    address: 0x76
+    update_interval: 600s
+
+remote_transmitter:
+  pin: GPIO20
+  carrier_duty_percent: 50%
+
+# For your AC, see the following link - https://esphome.io/components/climate/climate_ir/
+climate:
+  - platform: gree
+    name: "AC"
+    model: yan
+    sensor: Temperature

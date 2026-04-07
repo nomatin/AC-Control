@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="1.0.6.2025-10-07.CD-2239-0-04e5bb02" icon="Custom1.png">
+    <title>seed</title>
+    <instances>
+        <instance moduleIdRef="prefix0000_6bfd1446f2bbafe619aa6bd54f2505d0_6" modelIndex="85511996" path="C:/Users/Nomatin/Documents/Fritzing/parts/user/prefix0000_6bfd1446f2bbafe619aa6bd54f2505d0_6.fzp" flippedSMD="true">
+            <views/>
+        </instance>
+    </instances>
+</module>
