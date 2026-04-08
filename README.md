@@ -47,6 +47,7 @@ climate:
     sensor: Temperature
 ```
 **Or**
+
 Add define `ha_key`, `ota_password`, `wifi_ssid`, `wifi_password`, `ap_wifi_ssid`, `ap_wifi_password` in your secret YAML. Then create the device using [script.yaml](script.yaml).
 ```yaml
 wifi_ssid: "YOUR_SSID"
@@ -59,8 +60,10 @@ ap_wifi_ssid: "YOUR_AP_SSID"
 ap_wifi_password: "YOUR_AP_PASS"
 
 ```
+>[!FAQ]
+Setings for your AC can be found in the - ["IR Remote Climate"](esphome.io/components/climate/climate_ir/) documentation.
 ## Case
-Download STL files from ~~[Makerworld]()~~ or  the [STL]() folder. Sourese files are in the [Case]() folder.
+Download STL files from ~~[Makerworld]()~~ or  the [STL](stl) folder. Sourese files are in the [case](case) folder.
 <img src="img/case_render.png" width="650">
 
 The case is designed for 3 mm LEDs. If you have 5 mm LEDs, there is an IR LED diameter parameter(D_led) in the source files of the case. It is recommended to add 0.2–0.4 mm tolerance when printing the case.
