@@ -1,19 +1,19 @@
-# IR AC control on ESPHome
-An IR-based air consicioner countroller with [ESPHome](https://esphome.io/) and ESP32-C6
->[!Info] A small weekend project for my smart home.
+# IR AC Controler on ESPHome
+An IR-based air conditioner controller with [ESPHome](https://esphome.io/) and ESP32-C6
+>[!Info] A small weekend DIY project for my smart home.
 ### Sheet
 ![image](img/sheet.png)
-### Componet list
+### Component List
 | Component | Qty | Link |
 |-----------|-----|------|
 |Seeed Studio XIAO ESP32C6|1| [Getting Started](https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/) |
 |GY-BMP280-3.3 Pressure Sensor Module|1|[Datasheet](https://5.imimg.com/data5/SELLER/Doc/2022/1/WG/FV/GY/1833510/gy-bmp280-3-3-high-precision-atmospheric-pressure-sensor.pdf)|
-|NPN trinsistor 2N5551|1|[Datasheet](https://www.onsemi.com/download/data-sheet/pdf/2n5551t-d.pdf)|
-|3mm IR led 940nm|3|[Datasheet](https://www.everlighteurope.com/custom/files/datasheets/DIR-0000248.pdf)|
+|NPN transistor 2N5551|1|[Datasheet](https://www.onsemi.com/download/data-sheet/pdf/2n5551t-d.pdf)|
+|3mm IR LED 940nm|3|[Datasheet](https://www.everlighteurope.com/custom/files/datasheets/DIR-0000248.pdf)|
 |Resistor 15ohm|1||
 |Resistor 470ohm|1||
 ### ESPHome config
-To program your device, add this code to your ESPhome YAML config file.
+To program your device, add this code to your ESPHome YAML config file.
 ```yaml
 i2c:
   sda: GPIO22
@@ -44,10 +44,9 @@ climate:
     model: yan
     sensor: Temperature
 ```
-Or
+**Or**
 Add define `ha_key`, `ota_password`, `wifi_ssid`, `wifi_password`, `ap_wifi_ssid`, `ap_wifi_password` in your secret YAML. Then create the device using [script.yaml](script.yaml).
 ```yaml
-# Your Wi-Fi SSID and password
 wifi_ssid: "YOUR_SSID"
 wifi_password: "YOUR_PASS"
 
@@ -61,12 +60,12 @@ ap_wifi_password: "YOUR_AP_PASS"
 ## Case
 Download STL files from ~~[Makerworld]()~~ or  the [STL]() folder. Sourese files are in the [Case]() folder.
 ![image](img/case_render.png)
-The case is designed for 3 mm LEDs. If you have 5 mm LEDs, there is an IR LED diameter parameter(D_led) in the source files of the case. I recommend adding 0.2-0.4mm when printing the case.
+The case is designed for 3 mm LEDs. If you have 5 mm LEDs, there is an IR LED diameter parameter(D_led) in the source files of the case. It is recommended to add 0.2–0.4 mm tolerance when printing the case.
 ![image](img/case_resize.gif)
-#### I used these parameters for 3D printing:
+#### The following parameters were used for 3D printing:
  - Layer height - 0.2mm
  - Default line width - 0.4mm
  - Inner line width - 0.6mm
  - Wall loops - 3
- - Fruzzy skine type - Ridged
- - Fruzzy skine thinckness - 0.1mm
+ - Fuzzy skine type - Ridged
+ - Fuzzy skine thinckness - 0.1mm
