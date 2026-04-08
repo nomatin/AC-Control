@@ -61,7 +61,7 @@ ap_wifi_password: "YOUR_AP_PASS"
 
 ```
 >[!TIP]
->Setings for your AC can be found in the - ["IR Remote Climate"](https://esphome.io/components/climate/climate_ir/) documentation.
+>Config for your AC can be found in the - ["IR Remote Climate"](https://esphome.io/components/climate/climate_ir/) documentation.
 ## Case
 Download STL files from ~~[Makerworld]()~~ or  the [STL](stl) folder. Sourese files are in the [case](case) folder.
 <img src="img/case_render.png" width="650">
