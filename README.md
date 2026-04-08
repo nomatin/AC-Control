@@ -1,6 +1,6 @@
 # IR AC Controler on ESPHome
 An IR-based air conditioner controller with [ESPHome](https://esphome.io/) and ESP32-C6
->[!Info] A small weekend DIY project for my smart home.
+>[!NOTE] A small weekend DIY project for my smart home.
 ### Sheet
 ![image](img/sheet.png)
 ### Component List
