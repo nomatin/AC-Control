@@ -61,9 +61,9 @@ ap_wifi_password: "YOUR_AP_PASS"
 ```
 ## Case
 Download STL files from ~~[Makerworld]()~~ or  the [STL]() folder. Sourese files are in the [Case]() folder.
-![image](img/case_render.png)
+<img src="img/case_render.png" width="650">
 The case is designed for 3 mm LEDs. If you have 5 mm LEDs, there is an IR LED diameter parameter(D_led) in the source files of the case. It is recommended to add 0.2–0.4 mm tolerance when printing the case.
-![image](img/case_resize.gif)
+<img src="img/case_resize.gif" width="650">
 #### The following parameters were used for 3D printing:
  - Layer height - 0.2mm
  - Default line width - 0.4mm
