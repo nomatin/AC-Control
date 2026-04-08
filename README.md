@@ -1,21 +1,6 @@
 # IR AC control on ESPHome
-An IR-based air consicioner countroller with ESPHome and ESP32C6
+An IR-based air consicioner countroller with [ESPHome](https://esphome.io/) and ESP32-C6
 >[!Info] A small weekend project for my smart home.
-## Case
-The case was created in T-FLEX CAD 17. STL and STEP files are located in the folders STL_CASE and STEP_CASE.
-![image](img/case_render.png)
-The case is designed for 3 mm LEDs. If you have 5 mm LEDs, there is an IR LED diameter parameter(D_led) in the source files of the case. I recommend adding 0.2-0.4mm when printing the case.
-![image](img/case_resize.gif)
-#### Printing
-
-#### I used these parameters for 3D printing:
- - Layer height - 0.2mm
- - Default line width - 0.4mm
- - Inner line width - 0.6mm
- - Wall loops - 3
- - Fruzzy skine type - Ridged
- - Fruzzy skine thinckness - 0.1mm
-
 ### Sheet
 ![image](img/sheet.png)
 ### Componet list
@@ -27,3 +12,61 @@ The case is designed for 3 mm LEDs. If you have 5 mm LEDs, there is an IR LED di
 |3mm IR led 940nm|3|[Datasheet](https://www.everlighteurope.com/custom/files/datasheets/DIR-0000248.pdf)|
 |Resistor 15ohm|1||
 |Resistor 470ohm|1||
+### ESPHome config
+To program your device, add this code to your ESPhome YAML config file.
+```yaml
+i2c:
+  sda: GPIO22
+  scl: GPIO23
+  scan: True
+  id: i2c_bus
+  frequency: 1000Hz
+
+sensor:
+  - platform: bmp280_i2c
+    temperature:
+      id: "Temperature"
+      name: "Temperature"
+      oversampling: 16x
+    pressure:
+      name: "Pressure"
+    address: 0x76
+    update_interval: 600s
+
+remote_transmitter:
+  pin: GPIO20
+  carrier_duty_percent: 50%
+
+# For your AC, see the following link - https://esphome.io/components/climate/climate_ir/
+climate:
+  - platform: gree
+    name: "AC"
+    model: yan
+    sensor: Temperature
+```
+Or
+Add define `ha_key`, `ota_password`, `wifi_ssid`, `wifi_password`, `ap_wifi_ssid`, `ap_wifi_password` in your secret YAML. Then create the device using [script.yaml](script.yaml).
+```yaml
+# Your Wi-Fi SSID and password
+wifi_ssid: "YOUR_SSID"
+wifi_password: "YOUR_PASS"
+
+ha_key: "YOUR_HA_KEY"
+ota_password: "YOUR_OTA_PASS"
+
+ap_wifi_ssid: "YOUR_AP_SSID"
+ap_wifi_password: "YOUR_AP_PASS"
+
+```
+## Case
+Download STL files from ~~[Makerworld]()~~ or  the [STL]() folder. Sourese files are in the [Case]() folder.
+![image](img/case_render.png)
+The case is designed for 3 mm LEDs. If you have 5 mm LEDs, there is an IR LED diameter parameter(D_led) in the source files of the case. I recommend adding 0.2-0.4mm when printing the case.
+![image](img/case_resize.gif)
+#### I used these parameters for 3D printing:
+ - Layer height - 0.2mm
+ - Default line width - 0.4mm
+ - Inner line width - 0.6mm
+ - Wall loops - 3
+ - Fruzzy skine type - Ridged
+ - Fruzzy skine thinckness - 0.1mm
