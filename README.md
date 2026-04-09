@@ -63,7 +63,7 @@ ap_wifi_password: "YOUR_AP_PASS"
 >[!TIP]
 >Config for your AC can be found in the - ["IR Remote Climate"](https://esphome.io/components/climate/climate_ir/) documentation.
 ## Case
-Download STL files from ~~[Makerworld]()~~ or  the [STL](stl) folder. Source files are in the [case](case) folder.
+Download STL files from [Makerworld](https://makerworld.com/en/models/2637426-esp32c6-ir-remote-climate-case) or  the [STL](stl) folder. Source files are in the [case](case) folder.
 <img src="img/case_render.png" width="650">
 
 The case is designed for 3 mm LEDs. If you have 5 mm LEDs, there is an IR LED diameter parameter(D_led) in the source files of the case. It is recommended to add 0.2–0.4 mm tolerance when printing the case.
