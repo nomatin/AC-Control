@@ -1,4 +1,4 @@
-# IR AC Controler on ESPHome
+# IR AC Controller on ESPHome
 An IR-based air conditioner controller with [ESPHome](https://esphome.io/) and ESP32-C6
 >[!NOTE] 
 >A small weekend DIY project for my smart home.
@@ -29,7 +29,7 @@ sensor:
     temperature:
       id: "Temperature"
       name: "Temperature"
-      oversampling: 16x
+      oversampling: 2x
     pressure:
       name: "Pressure"
     address: 0x76
@@ -63,7 +63,7 @@ ap_wifi_password: "YOUR_AP_PASS"
 >[!TIP]
 >Config for your AC can be found in the - ["IR Remote Climate"](https://esphome.io/components/climate/climate_ir/) documentation.
 ## Case
-Download STL files from ~~[Makerworld]()~~ or  the [STL](stl) folder. Sourese files are in the [case](case) folder.
+Download STL files from ~~[Makerworld]()~~ or  the [STL](stl) folder. Source files are in the [case](case) folder.
 <img src="img/case_render.png" width="650">
 
 The case is designed for 3 mm LEDs. If you have 5 mm LEDs, there is an IR LED diameter parameter(D_led) in the source files of the case. It is recommended to add 0.2–0.4 mm tolerance when printing the case.

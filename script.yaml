@@ -41,7 +41,7 @@ sensor:
     temperature:
       id: "Temperature"
       name: "Temperature"
-      oversampling: 16x
+      oversampling: 2x
     pressure:
       name: "Pressure"
     address: 0x76
